@@ -1,0 +1,90 @@
+*, *::before, *::after {
+
+
+  user-select: none;
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  top:40%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: lightblue;
+  border: 1px red;
+}
+
+.world {
+  overflow: hidden;
+  position: relative;
+  width: 600px;
+  height: 150px;
+  border-radius: 1px red;
+}
+
+.car{
+  position: absolute;
+  left:calc(var(--bottom)*1%);
+  height: 35%;
+  bottom: 0;
+}
+
+.money{
+  position: absolute;
+  left:calc(var(--bottom)*1%);
+  height: 35%;
+  top: 60%;
+}
+.cloud{
+  --left:0;
+  position: absolute;
+  width: 30%;
+  top: 65%;
+  left: calc(var(--left)* 1%);
+}
+
+.score {
+  position: absolute;
+  font-size: 3vmin;
+  right: 1vmin;
+  top: 40%;
+}
+
+.start-screen {
+  position: absolute;
+  font-size: 5vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide {
+  display: none;
+}
+
+
+.ground {
+  --left: 0;
+  position: absolute;
+  width: 300%;
+  bottom: 0;
+  left: calc(var(--left) * 1%)
+}
+
+.dino {
+  --bottom: 0;
+  position: absolute;
+  left: 1%;
+  height: 11%;
+  bottom: calc(var(--bottom) * 1%);
+}
+
+.cactus {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 4%;
+  bottom: 0;
+}
