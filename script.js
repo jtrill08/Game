@@ -13,7 +13,7 @@ const endScreenElem = document.querySelector("[data-end-screen]")
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
-document.addEventListener("keydown", handleStart, { once: true })
+document.addEventListener("keydown", "touchstart", handleStart, { once: true })
 
 let lastTime
 let speedScale
@@ -77,7 +77,7 @@ function handleLose() {
   setDinoLose()
 
   setTimeout(() => {
-    document.addEventListener("keydown", handleStart, { once: true })
+    document.addEventListener("keydown", "touchstart", handleStart, { once: true })
     endScreenElem.classList.remove("hide")
   }, 100)
 
