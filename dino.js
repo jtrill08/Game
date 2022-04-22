@@ -10,6 +10,7 @@ const GRAVITY = 0.0012
 const DINO_FRAME_COUNT = 2
 const FRAME_TIME = 100
 
+
 let isJumping
 let dinoFrame
 let currentFrameTime
@@ -21,7 +22,13 @@ export function setupDino() {
   yVelocity = 0
   setCustomProperty(dinoElem, "--bottom", 0)
   document.removeEventListener("keydown", onJump)
+  document.removeEventListener("click", mobJump)
   document.addEventListener("keydown", onJump)
+  document.addEventListener("click", mobJump)
+  
+  
+  
+  
 }
 
 export function updateDino(delta, speedScale) {
@@ -69,4 +76,11 @@ function onJump(e) {
 
   yVelocity = JUMP_SPEED
   isJumping = true
+}
+
+function mobJump(){
+
+  yVelocity = JUMP_SPEED
+  isJumping = true
+
 }
