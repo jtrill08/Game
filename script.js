@@ -8,6 +8,7 @@ const SPEED_SCALE_INCREASE = 0.00001
 
 const worldElem = document.querySelector("[data-world]")
 const scoreElem = document.querySelector("[data-score]")
+const highScoreElem = document.querySelector("[data-highscore]")
 const startScreenElem = document.querySelector("[data-start-screen]")
 const endScreenElem = document.querySelector("[data-end-screen]")
 
@@ -58,15 +59,30 @@ function updateSpeedScale(delta) {
   speedScale += delta * SPEED_SCALE_INCREASE
 }
 
-function updateScore(delta) {
-  score += delta * 0.01
-  scoreElem.textContent = Math.floor(score)
+let highScore
+let offHighScore
+
+
+function updateHScore(){
+  highScore = localStorage.getItem('myCar')
+  highScoreElem.textContent =Math.floor(highScore)  
+  offHighScore = highScoreElem.textContent
 }
+
+function updateScore(delta) {
+  let officialScore=score += delta * 0.01
+  scoreElem.textContent = Math.floor(officialScore)
+  localStorage.setItem('myCar', officialScore)
+}
+console.log(localStorage)
+console.log(highScore)
 
 function handleStart() {
   lastTime = null
   speedScale = 1
   score = 0
+  highScore = 0
+  updateHScore()
   setupGround()
   setupDino()
   setupCactus()
