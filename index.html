@@ -20,9 +20,12 @@
     <img src="imgs/dino-stationary.png" class="dino" data-dino>
   </div>
   <button id="increment-btn" onclick="mobJump()">INCREMENT</button>
-  <audio id="sound" autoplay loop="loop">
-      <source src="audio/WAYR.mp3" type="audio/mp3">
-  </audio>
+
+    <script>
+    var audio = new Audio('/audio/WAYR.mp3');
+    audio.loop =true;
+    audio.play();
+  </script>
 
   <script src="dino.js"></script>
 
